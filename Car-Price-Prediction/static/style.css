@@ -1,0 +1,102 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-family: 'DM Serif Display', serif;
+}
+
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 500;
+}
+
+
+.form-column:not(:last-child) {
+    flex: 1;
+    margin-right: 20px; /* Adjust the margin between columns for all but the last one */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input,
+select {
+    width: calc(100% - 10px); /* Adjusted width to account for padding */
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 400;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#555555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" /></svg>'); /* Custom arrow icon */
+    background-position: calc(100% - 10px) center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    background-color: #262626;
+    color: white;
+    padding: 10px 15px;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    
+    
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+.prediction{
+    display: flex;
+    justify-content: center;
+}   
+.pred_font{
+    font-family: 'DM Serif Display', serif;
+    margin: 0px 10px 0px 0px;  
+    letter-spacing: 2px;
+}
+.pred_value{
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 500;
+}

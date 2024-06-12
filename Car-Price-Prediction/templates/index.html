@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Car Price Prediction</h1>
+    <form action="/predict" method="post">
+        <div class="form-column">
+        <label for="carlength">Car Length</label>
+        <input type="text" name="carlength" required placeholder="In Meters">
+
+        <label for="carwidth">Car Width</label>
+        <input type="text" name="carwidth" required placeholder="In Meters">
+
+        <label for="carheight">Car Height</label>
+        <input type="text" name="carheight" required placeholder="In Meters">
+
+        <label for="curbweight">Curb Weight</label>
+        <input type="text" name="curbweight" required placeholder="In Kilograms">
+
+        <label for="enginesize">Engine size</label>
+        <input type="text" name="enginesize" required placeholder="In Cubic Centimeters">
+
+        <label for="horsepower">Horsepower</label>
+        <input type="text" name="horsepower" required placeholder="In Horsepowers">
+        </div>
+        <div class="form-column">
+        <label for="citympg">Kilometers Per Gallons in City</label>
+        <input type="text" name="citympg" required placeholder="In Kilometers">
+
+        <label for="highwaympg">Kilometers Per Gallons in Highway</label>
+        <input type="text" name="highwaympg" required placeholder="In Kilometers">
+
+        <label for="fueltype">Fuel Type</label>
+        <select name="fueltype" required>
+            <option value="gas">Gas</option>
+            <option value="diesel">Diesel</option>
+        </select>
+
+        <label for="enginelocation">Engine Location</label>
+        <select name="enginelocation" required>
+            <option value="front">Front</option>
+            <option value="rear">Rear</option>
+        </select>
+
+        <label for="aspiration">Aspiration</label>
+        <select name="aspiration" required>
+            <option value="std">Naturally Aspirated Engine</option>
+            <option value="turbo">Turbo Charged Engine</option>
+        </select>
+
+        <label for="doornumber">Number of Doors</label>
+        <select name="doornumber" required>
+            <option value="two">Two</option>
+            <option value="four">Four</option>
+        </select>
+        </div>
+        <div class="form-column">
+        <label for="carbody">Car Body</label>
+        <select name="carbody" required>
+            <option value="convertible">Convertible</option>
+            <option value="hardtop">Hardtop</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="sedan">Sedan</option>
+            <option value="wagon">Wagon</option>
+        </select>
+        <label for="drivewheel">Drive Wheel</label>
+        <select name="drivewheel" required>
+            <option value="4wd">4-Wheel Drive</option>
+            <option value="fwd">Front Wheel Drive</option>
+            <option value="rwd">Rear Wheel Drive</option>
+        </select>
+        <label for="enginetype">Engine Type</label>
+        <select name="enginetype" required>
+            <option value="dohc">Dual overhead cam engines</option>
+            <option value="dohcv">Dual OverHead Cam and Valve</option>
+            <option value="l">L engine</option>
+            <option value="ohc">Overhead Camshaft</option>
+            <option value="ohcf">OverHead Cam and Valve F engine</option>
+            <option value="ohcv">OverHead Cam and Valve</option>
+            <option value="rotor">Rotary engine</option>
+        </select>
+        <label for="cylindernumber">Cylinder Number</label>
+        <select name="cylindernumber" required>
+            <option value="eight">Eight</option>
+            <option value="five">Five</option>
+            <option value="four">Four</option>
+            <option value="six">Six</option>
+            <option value="three">Three</option>
+            <option value="twelve">Twelve</option>
+            <option value="two">Two</option>
+        </select>
+        <!-- Repeat for other categorical variables -->
+        <label for="fuelsystem">Fuel System</label>
+        <select name="fuelsystem" required>
+            <option value="1bbl"> 1-Barrel Carburetor</option>
+            <option value="2bbl"> 2-Barrel Carburetor</option>
+            <option value="4bbl"> 4-Carrel Carburetor</option>
+            <option value="idi">Indirect Injection</option>
+            <option value="mfi">Mechanical Fuel Injection</option>
+            <option value="mpfi">Multi-Point Fuel Injection</option>
+            <option value="spdi">Plasma based Ignition System</option>
+            <option value="spfi">Spark Plug Fuel Injector</option>
+        </select>
+        <!-- Repeat for other categorical variables -->
+        </div>
+        <button type="submit">PREDICT</button>
+
+        
+    </form>
+
+    <!-- Display prediction result -->
+    {% if prediction_text %}
+        <div class="prediction"><p class="pred_font">PREDICTED PRICE:</p><p class="pred_value">{{ prediction_text }}</p></div>
+    {% endif %}
+</body>
+</html>
